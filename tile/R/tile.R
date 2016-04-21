@@ -720,7 +720,7 @@ function(...,
         
             #  Add Row titles
             if (tc$newrow&&tc$rowtitle$add) {
-                if (verbose) print("  Adding row titles")                
+                if (verbose) print("Adding row titles")                
                 if (tc$special$rowtitle!="none") { 
                     tc <- eval(call(paste("tile.",tc$special$rowtitle,".rowtitle",sep=""),tc)) }
                 else {
@@ -849,7 +849,9 @@ function(...,
                                                  - 1)
                 tc$yaxistitle$layout.pos.row <- tc$curplotrow
                 if (tc$special$yaxistitle[tc$iplot]!="none") {
-                    tc <- eval(call(paste(tc$special$yaxistitle[tc$iplot],"TileAxisTitle",sep=""),"yaxis",tc))
+                    tc <- eval(call(paste(tc$special$yaxistitle[tc$iplot],
+                                          "TileAxisTitle",sep=""),
+                                    "yaxis",tc))
                 } else {
                     tc$yaxistitle$fontsize <- tc$defaults$yaxistitle$fontsize
                     tc <- tileAxistitleprep("yaxis",tc,...)
@@ -866,7 +868,9 @@ function(...,
                                                      + 1)
                 tc$rightaxistitle$layout.pos.row <- tc$curplotrow
                 if (tc$special$rightaxistitle[tc$iplot]!="none")
-                    tc <- eval(call(paste(tc$special$rightaxistitle[tc$iplot],"TileAxisTitle",sep=""),"rightaxis",tc))
+                    tc <- eval(call(paste(tc$special$rightaxistitle[tc$iplot],
+                                          "TileAxisTitle",sep=""),
+                                    "rightaxis",tc))
                 else {
                     tc$rightaxistitle$fontsize <- tc$defaults$rightaxistitle$fontsize
                     tc <- tileAxistitleprep("rightaxis",tc,...)
